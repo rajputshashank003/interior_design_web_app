@@ -4,7 +4,7 @@ const BlurAnimateText = ({text} : { text : string}) => {
     const arr = text.split(" ");
     return (
         <div
-            className="relative flex flex-wrap overflow-hidden"
+            className="relative z-[99] flex flex-wrap overflow-hidden"
         >
             {
                 arr.map((val) => (

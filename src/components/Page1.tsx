@@ -13,12 +13,17 @@ const Page1 = () => {
     <div className="h-screen w-full overflow-hidden relative grid grid-cols-2 max-md:flex flex-col">
         <div className="text col-span-1 text-white/80 h-full flex flex-col justify-center items-center w-full relative">
             <div className="space max-md:top-6 text-[3rem] md:text-[5rem] flex flex-col font-serif relative justify-center items-center max-md:mt-4 md:left-[20vw]">
-                <div className="max-md:hidden">
+                <div className="max-md:hidden flex flex-col  z-[99]">
                     <div className=" flex flex-row">
                         <div className={`text-white/80 relative rounded-xl`}
                         >
-                            <div className="absolute top-0 z-[9] bg-gradient-to-b from-[#B96539]/40 to-[#9E4A1D] backdrop-blur-[2px] h-full w-1/2 right-0 shadow-[0px_0px_15px] shadow-black/40">
-                            </div>
+                            <motion.div
+                                initial={{ opacity : 0, width : "100%",}}
+                                animate={{opacity : 1, width : "50%"}}
+                                transition={{duration : 2, ease : [0.39, 1, 0.2, 1] ,delay : 1.5}} 
+                                className="absolute top-0 z-[9] bg-gradient-to-b from-[#B96539]/40 to-[#9E4A1D] backdrop-blur-[2px] h-full w-1/2 right-0 shadow-[0px_0px_15px] shadow-black/40"
+                            >
+                            </motion.div>
                             <div className="relative z-[99] pr-4">
                                 <BlurAnimateText text={"Create your"} />
                             </div>
@@ -27,20 +32,36 @@ const Page1 = () => {
                     <div className="relative leading-20">
                         <BlurAnimateText text={"space"} />
                     </div>
+                    <div className="relative pt-10 max-md:text-[2.8vw] text-[1.3vw] text-white/60 w-1/2  max-md:w-[80%] font-sans">
+                        {
+                            data.details
+                        }
+                    </div>
+                    <button className="relative mb-4 mt-10 lg:text-[2vw] font-semibold hover:scale-[1.05] duration-300 cursor-pointer max-md:text-[4vw] w-60 bg-gradient-to-b from-white/40 text-[2.5vw] rounded-xl shadow-[0px_0px_10px] shadow-black/50 to-[#9E4A1D]/10 backdrop-blur-[2px]">
+                        {
+                            data["button-name"]
+                        }
+                    </button>
                 </div>
-                <div className="md:hidden max-md:w-[80%] leading-15">
+                <div className="md:hidden  relative max-md:w-[80%] ">
                     <BlurAnimateText text={"Create your space"} />
+                    <motion.div 
+                        initial={{ opacity : 0, width : "100%",}}
+                        animate={{opacity : 1, width : "50%"}}
+                        transition={{duration : 2, ease : [0.39, 1, 0.2, 1] ,delay : 1.5}}
+                        className="absolute top-0 z-[9] bg-gradient-to-b from-[#B96539]/40 to-[#9E4A1D] backdrop-blur-[2px] h-[33%] w-1/2 right-0 shadow-[0px_0px_15px] shadow-black/40">
+                    </motion.div>
+                    <div className="relative max-md:text-[3.3vw] text-[1.3vw] text-white/60 w-full  max-md:w-[80%] font-sans md:mt-10">
+                        {
+                            data.details
+                        }
+                    </div>
+                    <button className="relative lg:text-[2vw] font-semibold hover:scale-[1.05] duration-300 cursor-pointer max-md:text-[4vw] w-60 bg-gradient-to-b from-white/40 text-[2.5vw] rounded-xl shadow-[0px_0px_10px] shadow-black/50 to-[#9E4A1D]/10 backdrop-blur-[2px]">
+                        {
+                            data["button-name"]
+                        }
+                    </button>
                 </div>
-                <div className="relative max-md:text-[2.8vw] text-[1.3vw] text-white/60 w-[70%] max-md:w-[80%] font-sans md:mt-10">
-                    {
-                        data.details
-                    }
-                </div>
-                <button className="relative mb-4 lg:text-[2vw] font-semibold hover:scale-[1.05] duration-300 cursor-pointer max-md:text-[4vw] w-60 bg-gradient-to-b from-white/40 top-10 text-[2.5vw] rounded-xl shadow-[0px_0px_10px] shadow-black/50 to-[#9E4A1D]/10 backdrop-blur-[2px]">
-                    {
-                        data["button-name"]
-                    }
-                </button>
             </div>
         </div>
         <div className="relative col-span-1">
