@@ -12,7 +12,7 @@ const Page1 = () => {
   return (
     <div className="h-screen w-full overflow-hidden relative grid grid-cols-2 max-md:flex flex-col">
         <div className="text col-span-1 text-white/80 h-full flex flex-col justify-center items-center w-full relative">
-            <div className="space max-md:top-6 text-[3rem] md:text-[5rem] flex flex-col font-serif relative left-[20vw]">
+            <div className="space max-md:top-6 text-[3rem] md:text-[5rem] flex flex-col font-serif relative justify-center items-center max-md:mt-4 md:left-[20vw]">
                 <div className="max-md:hidden">
                     <div className=" flex flex-row">
                         <div className={`text-white/80 relative rounded-xl`}
@@ -28,10 +28,10 @@ const Page1 = () => {
                         <BlurAnimateText text={"space"} />
                     </div>
                 </div>
-                <div className="md:hidden max-md:w-[80%] -4 leading-15">
+                <div className="md:hidden max-md:w-[80%] leading-15">
                     <BlurAnimateText text={"Create your space"} />
                 </div>
-                <div className="relative max-md:text-[2.5vw] text-[1.3vw] text-white/60 w-[70%] font-sans md:mt-10">
+                <div className="relative max-md:text-[2.8vw] text-[1.3vw] text-white/60 w-[70%] max-md:w-[80%] font-sans md:mt-10">
                     {
                         data.details
                     }
